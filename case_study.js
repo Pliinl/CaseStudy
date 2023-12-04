@@ -1,4 +1,3 @@
-// Định nghĩa class Song
 class Song {
   constructor(stt, songName, artist, genre, composer, releaseYear) {
     this.stt = stt;
@@ -9,7 +8,9 @@ class Song {
     this.releaseYear = releaseYear;
   }
 }
-let songs = []; // Khai báo một mảng để lưu trữ danh sách các bài hát.
+
+// Khai báo một mảng để lưu trữ danh sách các bài hát.
+let songs = []; 
 
 function displaySongs() {
   // Hàm để hiển thị danh sách bài hát lên trang HTML.
@@ -17,7 +18,8 @@ function displaySongs() {
   songList.innerHTML = "";
 
   songs.forEach((song, index) => {
-    const row = `<tr>
+    const row = 
+    `<tr>
       <td>${song.stt}</td>
       <td>${song.songName}</td>
       <td>${song.artist}</td>
@@ -31,6 +33,7 @@ function displaySongs() {
   });
 }
 
+
 // Hủy bỏ thông tin bài hát đã nhập
 function cancel() {
   document.getElementById("stt").value = "";
@@ -40,6 +43,7 @@ function cancel() {
   document.getElementById("composer").value = "";
   document.getElementById("releaseYear").value = "";
 }
+
 
 // Lấy thông tin bài hát từ Input trên HTML
 function addSong() {
@@ -59,16 +63,19 @@ function addSong() {
     releaseYear: releaseYear,
   };
 
+
   // Gọi hàm dể hiển thị
   songs.push(newSong);
   displaySongs();
 }
+
 
 // Xóa bài hát khỏi danh sách
 function deleteSong(index) {
   songs.splice(index, 1);
   displaySongs();
 }
+
 
 // Chỉnh sữa thông tin một bài hát
 function editSong(index) {
@@ -89,6 +96,7 @@ function editSong(index) {
   }
 }
 
+
 // Tìm kiếm bài hát
 function searchSong() {
   const searchInput = document
@@ -104,6 +112,7 @@ function searchSong() {
   );
   displayFilteredSongs(filteredSongs);
 }
+
 
 // Hiển thị bài hát tìm kiếm
 function displayFilteredSongs(filteredSongs) {
@@ -124,6 +133,7 @@ function displayFilteredSongs(filteredSongs) {
     songList.innerHTML += row;
   });
 }
+
 
 // Ví dụ sử dụng class Song để thêm bài hát vào danh sách
 const newSong1 = new Song(

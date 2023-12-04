@@ -7,9 +7,11 @@
     <link rel="stylesheet" href="./case_study.css" />
   </head>
   <body>
+
     <div class="container">
-      <font color="navy"
-        ><h1>
+
+      <font color="navy">
+        <h1>
           <center>
             <b>
               <big>
@@ -19,11 +21,14 @@
           </center>
         </h1>
       </font>
+
       <center>
         <input type="text" id="searchInput" placeholder="Tìm kiếm..." />
         <button onclick="searchSong()">Tìm kiếm</button>
       </center>
+
       <table id="songTable">
+        
         <thead>
           <tr>
             <th><center>STT</center></th>
@@ -40,10 +45,19 @@
           <!-- Danh sách nhạc sẽ được hiển thị ở đây -->
         </tbody>
       </table>
+
       <div class="add-song">
-        <font color="navy"
-          ><h2>
-            <center>THÊM BÀI HÁT MỚI<b></b></center></h2></font>
+
+        <font color="navy">
+          <h2>
+            <center>
+              <b>
+                THÊM BÀI HÁT MỚI
+              </b>
+            </center>
+          </h2>
+        </font>
+
         <input type="text" id="stt" placeholder="STT..." />
         <input type="text" id="songName" placeholder="Tên bài hát..." />
         <input type="text" id="artist" placeholder="Ca sĩ..." />
@@ -53,8 +67,11 @@
 
         <button onclick="addSong()">Thêm</button>
         <button onclick="cancel()">Hủy</button>
+
       </div>
     </div>
+
     <script src="./case_study.js"></script>
+
   </body>
 </html>
