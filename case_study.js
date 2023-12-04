@@ -1,6 +1,18 @@
-let songs = []; // Danh sách các bài hát
+// Định nghĩa class Song
+class Song {
+  constructor(stt, songName, artist, genre, composer, releaseYear) {
+    this.stt = stt;
+    this.songName = songName;
+    this.artist = artist;
+    this.genre = genre;
+    this.composer = composer;
+    this.releaseYear = releaseYear;
+  }
+}
+let songs = []; // Khai báo một mảng để lưu trữ danh sách các bài hát.
 
 function displaySongs() {
+  // Hàm để hiển thị danh sách bài hát lên trang HTML.
   const songList = document.getElementById("songList");
   songList.innerHTML = "";
 
@@ -19,6 +31,7 @@ function displaySongs() {
   });
 }
 
+// Hủy bỏ thông tin bài hát đã nhập
 function cancel() {
   document.getElementById("stt").value = "";
   document.getElementById("songName").value = "";
@@ -28,6 +41,7 @@ function cancel() {
   document.getElementById("releaseYear").value = "";
 }
 
+// Lấy thông tin bài hát từ Input trên HTML
 function addSong() {
   const stt = document.getElementById("stt").value;
   const songName = document.getElementById("songName").value;
@@ -45,24 +59,27 @@ function addSong() {
     releaseYear: releaseYear,
   };
 
+  // Gọi hàm dể hiển thị
   songs.push(newSong);
   displaySongs();
 }
 
+// Xóa bài hát khỏi danh sách
 function deleteSong(index) {
   songs.splice(index, 1);
   displaySongs();
 }
 
+// Chỉnh sữa thông tin một bài hát
 function editSong(index) {
   const stt = prompt("Nhập STT mới:");
   const editedName = prompt("Nhập tên bài hát mới:");
-  const editedArtist = prompt("Nhập tên nhạc sĩ mới:");
+  const editedArtist = prompt("Nhập tên ca sĩ mới:");
   const editedGenre = prompt("Nhập tên thể loại mới:");
   const editedComposer = prompt("Nhập tên nhạc sĩ mới:");
   const editedReleaseYear = prompt("Nhập năm xuất bản mới:");
   if (editedName !== null) {
-    songs[index].stt = editedName;
+    songs[index].stt = stt;
     songs[index].songName = editedName;
     songs[index].artist = editedArtist;
     songs[index].genre = editedGenre;
@@ -72,6 +89,7 @@ function editSong(index) {
   }
 }
 
+// Tìm kiếm bài hát
 function searchSong() {
   const searchInput = document
     .getElementById("searchInput")
@@ -86,6 +104,8 @@ function searchSong() {
   );
   displayFilteredSongs(filteredSongs);
 }
+
+// Hiển thị bài hát tìm kiếm
 function displayFilteredSongs(filteredSongs) {
   const songList = document.getElementById("songList");
   songList.innerHTML = "";
@@ -105,34 +125,31 @@ function displayFilteredSongs(filteredSongs) {
   });
 }
 
-// Mô phỏng dữ liệu ban đầu
-songs.push({
-  stt: 1,
-  songName: "Nơi Này Có Anh ",
-  artist: " Sơn Tùng MTP",
-  genre: "Pop và RnB",
-  composer: "Sơn Tùng MTP ",
-  releaseYear: "2017 ",
-});
+// Ví dụ sử dụng class Song để thêm bài hát vào danh sách
+const newSong1 = new Song(
+  1,
+  "Nơi Này Có Anh",
+  "Sơn Tùng MTP",
+  "Pop và RnB",
+  "Sơn Tùng MTP",
+  "2017"
+);
+const newSong2 = new Song(
+  2,
+  "Nên Chờ Hay Nên Quên",
+  "Chu Thúy Quỳnh x Đại Mèo",
+  "Remix",
+  "Yan Nguyễn",
+  "2023"
+);
+const newSong3 = new Song(
+  3,
+  "Cắt Đi Nỗi Sầu",
+  "Tăng Duy Tân",
+  "Vpop",
+  "Tăng Duy Tân - Drum 7",
+  "2023"
+);
 
-// Mô phỏng dữ liệu ban đầu
-songs.push({
-  stt: 2,
-  songName: "Em Gì Ơi ",
-  artist: " Jack, K-ICM",
-  genre: "Pop",
-  composer: "Jack ",
-  releaseYear: "2019 ",
-});
-
-// Mô phỏng dữ liệu ban đầu
-songs.push({
-  stt: 3,
-  songName: "Cắt Đi Nỗi Sầu ",
-  artist: " Tăng Duy Tân",
-  genre: " House",
-  composer: "Tăng Duy Tân ",
-  releaseYear: "2023 ",
-});
-
-displaySongs(); // Hiển thị danh sách ban đầu
+songs.push(newSong1, newSong2, newSong3);
+displaySongs(); // Hiển thị danh sách VD

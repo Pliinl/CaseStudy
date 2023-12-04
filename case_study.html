@@ -9,9 +9,16 @@
   <body>
     <div class="container">
       <font color="navy"
-        ><h1><center>QUẢN LÝ DANH SÁCH NHẠC</center></h1></font
-      >
-
+        ><h1>
+          <center>
+            <b>
+              <big>
+                QUẢN LÝ DANH SÁCH NHẠC
+              </big>
+            </b>
+          </center>
+        </h1>
+      </font>
       <center>
         <input type="text" id="searchInput" placeholder="Tìm kiếm..." />
         <button onclick="searchSong()">Tìm kiếm</button>
@@ -23,7 +30,7 @@
             <th><center>TÊN BÀI HÁT</center></th>
             <th><center>CA SĨ</center></th>
             <th><center>THỂ LOẠI</center></th>
-            <th><center>SÁNG TÁC</center></th>
+            <th><center>NHẠC SĨ</center></th>
             <th><center>NĂM PHÁT HÀNH</center></th>
             <th><center>CHỈNH SỬA</center></th>
             <th>XÓA</th>
@@ -35,15 +42,14 @@
       </table>
       <div class="add-song">
         <font color="navy"
-          ><h2><center>THÊM BÀI HÁT MỚI</center></h2></font
-        >
-
-        <input type="text" id="stt" placeholder="STT" />
-        <input type="text" id="songName" placeholder="Tên bài hát" />
-        <input type="text" id="artist" placeholder="Ca sĩ" />
-        <input type="text" id="genre" placeholder="Thể loại" />
-        <input type="text" id="composer" placeholder="Sáng tác" />
-        <input type="text" id="releaseYear" placeholder="Năm phát hành" />
+          ><h2>
+            <center>THÊM BÀI HÁT MỚI<b></b></center></h2></font>
+        <input type="text" id="stt" placeholder="STT..." />
+        <input type="text" id="songName" placeholder="Tên bài hát..." />
+        <input type="text" id="artist" placeholder="Ca sĩ..." />
+        <input type="text" id="genre" placeholder="Thể loại..." />
+        <input type="text" id="composer" placeholder="Sáng tác..." />
+        <input type="text" id="releaseYear" placeholder="Năm phát hành..." />
 
         <button onclick="addSong()">Thêm</button>
         <button onclick="cancel()">Hủy</button>
