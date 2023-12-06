@@ -146,11 +146,11 @@ const newSong1 = new Song(
 );
 const newSong2 = new Song(
   2,
-  "Nên Chờ Hay Nên Quên",
-  "Chu Thúy Quỳnh x Đại Mèo",
-  "Remix",
-  "Yan Nguyễn",
-  "2023"
+  "Hơn Cả Yêu",
+  "Đức Phúc",
+  "Ballad",
+  "Khắc Hưng",
+  "2020"
 );
 const newSong3 = new Song(
   3,
