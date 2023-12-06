@@ -110,6 +110,11 @@ function searchSong() {
       song.composer.toLowerCase().includes(searchInput) ||
       song.releaseYear.toLowerCase().includes(searchInput)
   );
+
+  if (filteredSongs.length === 0) {
+    alert("Không tìm thấy bài hát phù hợp."); //Cảnh báo khi không tìm thấy kết quả
+  }
+
   displayFilteredSongs(filteredSongs);
 }
 
